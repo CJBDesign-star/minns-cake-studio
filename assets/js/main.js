@@ -57,6 +57,15 @@
   try { introSeen = !!sessionStorage.getItem("mcs_intro"); } catch (e) {}
   if (introSeen && preloader) preloader.style.display = "none";
 
+  function showHeroNow() {
+    // Hard fallback: make every hero element visible, no animation.
+    if (preloader) preloader.style.display = "none";
+    document.querySelectorAll(".hero__title .ln>span, .hero .reveal-up").forEach((el) => {
+      el.style.transform = "none";
+      el.style.opacity = "1";
+    });
+  }
+
   function revealHero(skip) {
     document.body.classList.add("is-loaded");
     if (hasGSAP && !reduce) {
@@ -65,22 +74,37 @@
       else { tl.to("#preloader", { yPercent: -100, duration: 0.85, ease: "power3.inOut" }, 0); }
       tl.to(".hero__title .ln>span", { yPercent: 0, duration: 1.05, stagger: 0.1 }, skip ? 0 : 0.3)
         .to(".hero .reveal-up", { y: 0, opacity: 1, duration: 0.85, stagger: 0.08 }, skip ? 0.05 : 0.5);
-    } else if (preloader) {
-      preloader.style.display = "none";
-      document.querySelectorAll(".hero__title .ln>span, .hero .reveal-up").forEach((el) => {
-        el.style.transform = "none";
-        el.style.opacity = "1";
-      });
+    } else {
+      showHeroNow();
     }
+  }
+
+  /* Reveal exactly once, no matter which trigger fires first. */
+  let heroRevealed = false;
+  function ensureHero(skip) {
+    if (heroRevealed) return;
+    heroRevealed = true;
+    revealHero(skip);
   }
 
   if (preloader && !reduce && hasGSAP && !introSeen) {
     gsap.fromTo(".preloader__bar>i", { xPercent: -100 }, { xPercent: 0, duration: 0.7, ease: "power2.inOut", delay: 0.15 });
   }
-  window.addEventListener("load", () => {
-    if (reduce || introSeen) { revealHero(true); }
-    else { try { sessionStorage.setItem("mcs_intro", "1"); } catch (e) {} setTimeout(function () { revealHero(false); }, 800); }
-  });
+
+  function startReveal() {
+    if (reduce || introSeen) { ensureHero(true); }
+    else { try { sessionStorage.setItem("mcs_intro", "1"); } catch (e) {} setTimeout(function () { ensureHero(false); }, 800); }
+  }
+
+  // Fire on load — but if the page is already loaded (cache/bfcache), fire now.
+  if (document.readyState === "complete") { startReveal(); }
+  else { window.addEventListener("load", startReveal); }
+
+  // bfcache restore (mobile back/forward): content must be visible immediately.
+  window.addEventListener("pageshow", function (e) { if (e.persisted) { heroRevealed = true; showHeroNow(); } });
+
+  // Last-resort safety net: never leave the hero hidden if load/animation stalls.
+  setTimeout(function () { if (!heroRevealed) { heroRevealed = true; showHeroNow(); } }, 3000);
 
   /* ---------- Navigation behaviour ---------- */
   const nav = document.getElementById("nav");
