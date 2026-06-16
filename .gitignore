@@ -1,0 +1,8 @@
+# Internal handoff notes — keep private, do not publish
+PROJECT-NOTES.md
+
+# OS
+Thumbs.db
+.DS_Store
+*.log
+.vscode/

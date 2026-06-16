@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minns Cake Studio · Mobile Cake Cart & Custom Cakes · Simi Valley, CA</title>
+  <meta name="description" content="Minns Cake Studio (The Buttercream Bar) is a mobile cake cart and custom cake studio in Simi Valley, CA. Live, hand piped cake artistry for weddings, showers, birthdays and events across Ventura, Los Angeles & Santa Barbara Counties." />
+  <link rel="canonical" href="https://minnscakestudio.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/logo.svg" />
+  <meta name="theme-color" content="#2B2521" />
+
+  <!-- Local SEO -->
+  <meta name="geo.region" content="US-CA" />
+  <meta name="geo.placename" content="Simi Valley, California" />
+  <meta name="geo.position" content="34.2694;-118.7815" />
+  <meta name="ICBM" content="34.2694, -118.7815" />
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Minns Cake Studio" />
+  <meta property="og:url" content="https://minnscakestudio.com/" />
+  <meta property="og:title" content="Minns Cake Studio · The Buttercream Bar" />
+  <meta property="og:description" content="Live cake artistry & vintage charm. A mobile cake cart where your guests customize their own hand piped slices. Serving Ventura, LA & Santa Barbara Counties." />
+  <meta property="og:image" content="https://minnscakestudio.com/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Buttercream Bar mobile cake cart by Minns Cake Studio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minns Cake Studio · The Buttercream Bar" />
+  <meta name="twitter:description" content="Live cake artistry & vintage charm. A new way to dessert, brought to your event." />
+  <meta name="twitter:image" content="https://minnscakestudio.com/assets/img/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- LocalBusiness structured data (helps "mobile bakery / cake cart near me" searches) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Minns Cake Studio",
+    "alternateName": "The Buttercream Bar",
+    "description": "Mobile live cake artistry cart and custom cake studio. Guests customize their own hand piped cake slices live. Serving weddings, showers, birthdays and events across Ventura, Los Angeles and Santa Barbara Counties.",
+    "image": "https://minnscakestudio.com/assets/img/og-image.jpg",
+    "url": "https://minnscakestudio.com/",
+    "priceRange": "$$",
+    "servesCuisine": "Desserts",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Simi Valley",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Ventura County, CA" },
+      { "@type": "AdministrativeArea", "name": "Los Angeles County, CA" },
+      { "@type": "AdministrativeArea", "name": "Santa Barbara County, CA" }
+    ],
+    "sameAs": ["https://www.instagram.com/thebuttercreambar_/"],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "The Buttercream Bar mobile cake cart",
+        "description": "Live, hand piped cake artistry mobile cart for weddings and events."
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== Film grain + vignette overlays (cinematic) ===== -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ===== Scroll progress ===== -->
+  <div class="scroll-prog" aria-hidden="true"><i id="scrollProg"></i></div>
+
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__script">a new way to dessert</span>
+      <h1 class="preloader__title">
+        <span class="ln"><span>The Buttercream</span></span>
+        <span class="ln"><span>Bar</span></span>
+      </h1>
+      <div class="preloader__bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Minns Cake Studio home">
+        <img src="assets/img/logo.svg" alt="" class="nav__logo" />
+        <span class="nav__name">Minns Cake Studio</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#experience">The Experience</a>
+        <a href="#how">How It Works</a>
+        <a href="#menu">The Menu</a>
+        <a href="#traditional">Custom Cakes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#quote" class="btn btn--nav">Get a Quote</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav>
+      <a href="#experience">The Experience</a>
+      <a href="#artist">The Artist</a>
+      <a href="#how">How It Works</a>
+      <a href="#menu">The Menu</a>
+      <a href="#traditional">Custom Cakes</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#quote" class="btn btn--solid">Get a Quote</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <span class="hero__brand reveal-up">Minns Cake Studio</span>
+        <p class="hero__script reveal-up">a new way to dessert</p>
+        <h1 class="hero__title">
+          <span class="ln"><span>Live Cake Artistry</span></span>
+          <span class="ln"><span><em>&amp;</em> Vintage Charm</span></span>
+        </h1>
+        <p class="hero__sub reveal-up">An elegant mobile cart experience where your guests customize their own cake slices, piped, drizzled and finished live.</p>
+        <div class="hero__cta reveal-up">
+          <a href="#quote" class="btn btn--solid">Book the Bar</a>
+          <a href="#experience" class="btn btn--ghost">See the Experience</a>
+        </div>
+        <span class="hero__loc reveal-up">Simi Valley · Serving Ventura, Los Angeles &amp; Santa Barbara Counties</span>
+      </div>
+
+    </section>
+
+    <!-- ===== Manifesto / Intro ===== -->
+    <section class="intro" id="intro">
+      <span class="intro__flourish" aria-hidden="true">celebrate</span>
+      <div class="container intro__inner">
+        <span class="eyebrow reveal-up">The Concept</span>
+        <p class="intro__lead">
+          <span class="word">We</span> <span class="word">bring</span> <span class="word">the</span> <span class="word">studio</span> <span class="word">to</span> <span class="word">you.</span>
+          <span class="word">A</span> <span class="word">hand</span> <span class="word">piped,</span> <span class="word">all</span> <span class="word">white</span> <span class="word">cart</span> <span class="word">where</span> <span class="word">every</span> <span class="word">guest</span> <span class="word">becomes</span> <span class="word">part</span> <span class="word">of</span> <span class="word">the</span> <span class="word">artistry.</span> <span class="word">One</span> <span class="word">custom</span> <span class="word">slice</span> <span class="word">at</span> <span class="word">a</span> <span class="word">time.</span>
+        </p>
+        <div class="intro__meta reveal-up">
+          <span>Hand piped live</span><i></i><span>All white vintage cart</span><i></i><span>A slice as unique as each guest</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience (alternating steps) ===== -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="exp__head">
+          <span class="eyebrow">The Guest Experience</span>
+          <h2 class="sec-title reveal-up">Three steps to their perfect slice</h2>
+        </div>
+
+        <article class="exp__step reveal-up">
+          <div class="exp__media">
+            <img src="assets/img/foundation.jpg" alt="Three freshly baked cake bases in tins beside a create your perfect slice menu" />
+            <span class="exp__tag">01</span>
+          </div>
+          <div class="exp__body">
+            <h3>The Foundation</h3>
+            <p>Guests start by selecting their preferred cake base from freshly baked flavors, curated specifically for your celebration.</p>
+          </div>
+        </article>
+
+        <article class="exp__step exp__step--reverse reveal-up">
+          <div class="exp__media">
+            <img src="assets/img/artistry.jpg" alt="Buttercream piped onto a cake tin with a piping bag" />
+            <span class="exp__tag">02</span>
+          </div>
+          <div class="exp__body">
+            <h3>The Live Artistry</h3>
+            <p>They choose their buttercream and signature drizzle, then watch the magic unfold as it's piped right before their eyes.</p>
+          </div>
+        </article>
+
+        <article class="exp__step reveal-up">
+          <div class="exp__media">
+            <img src="assets/img/finale.jpg" alt="A finished cake tin topped with chocolate, sprinkles and cookie crumbles, held over the topping bar" />
+            <span class="exp__tag">03</span>
+          </div>
+          <div class="exp__body">
+            <h3>The Creative Finale</h3>
+            <p>The final touch is entirely theirs. They dive into the topping bar to add the crunch and flavor that make the slice perfectly their own.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Artist ===== -->
+    <section class="artist" id="artist">
+      <div class="container artist__grid">
+        <div class="artist__media">
+          <div class="reveal-clip"><img src="assets/img/artist.jpg" alt="Marisa, founder and cake artist of Minns Cake Studio" data-parallax="0.12" /></div>
+          <span class="artist__sig">Marisa</span>
+        </div>
+        <div class="artist__text">
+          <span class="eyebrow">Meet the Artist</span>
+          <h2 class="sec-title reveal-up">Cake is my canvas.</h2>
+          <p class="reveal-up">My name is Marisa, and most call me <em>Minn</em>. As a professional baker and decorator, my passion is making people feel seen and celebrated through my craft.</p>
+          <p class="reveal-up">I created this interactive experience to break my studio walls down and bring the live, hand piped artistry of custom cake design directly to your guests.</p>
+          <a href="https://www.instagram.com/thebuttercreambar_/" target="_blank" rel="noopener" class="link-underline reveal-up">@thebuttercreambar_</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="how" id="how">
+      <div class="container">
+        <div class="how__head">
+          <span class="eyebrow">The Process</span>
+          <h2 class="sec-title reveal-up">How It Works</h2>
+          <p class="how__intro reveal-up">Four simple steps, from your first inquiry to the moment your guests step up to the bar.</p>
+        </div>
+        <ol class="how__list">
+          <li class="how__row reveal-up">
+            <span class="how__n">01</span>
+            <div class="how__c">
+              <h3>Secure Your Date</h3>
+              <p>Share your event details and guest count through the quote form. Once your date is confirmed, a retainer locks in your celebration.</p>
+            </div>
+          </li>
+          <li class="how__row reveal-up">
+            <span class="how__n">02</span>
+            <div class="how__c">
+              <h3>Tailor Your Experience</h3>
+              <p>Together we curate the perfect custom menu and design your live cake artistry, exploring any curated additions for the day.</p>
+            </div>
+          </li>
+          <li class="how__row reveal-up">
+            <span class="how__n">03</span>
+            <div class="how__c">
+              <h3>Studio to Venue</h3>
+              <p>I handle complete delivery and styling of the mobile cake bar, setting the stage so everything flows flawlessly to your timeline.</p>
+            </div>
+          </li>
+          <li class="how__row reveal-up">
+            <span class="how__n">04</span>
+            <div class="how__c">
+              <h3>Guests Customize Live</h3>
+              <p>Your guests step up to watch live cake artistry in action, customizing their individual fresh baked slices with premium finishes.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Pricing / Included ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="sec-head sec-head--center">
+          <span class="eyebrow">The Investment</span>
+          <h2 class="sec-title reveal-up">Simple, Transparent Pricing</h2>
+        </div>
+        <div class="pricing__grid">
+          <article class="price-card reveal-up">
+            <span class="price-card__tag">Live Artistry &amp; Service</span>
+            <div class="price-card__amt">Starts at <b>$300</b></div>
+            <p>Full cart transport, setup, live on site styling and cleanup. Includes up to 2 hours of service and 60 miles of round trip travel from the studio.</p>
+          </article>
+          <article class="price-card price-card--feature reveal-up">
+            <span class="price-card__tag">Individual Cake Tins</span>
+            <div class="price-card__amt"><b>$10</b> / guest</div>
+            <p>Two signature flavors, nine unlimited classic toppings, two buttercreams and three drizzles, all assembled and styled live for each guest.</p>
+            <span class="price-card__note">50 guest minimum</span>
+          </article>
+          <article class="price-card reveal-up">
+            <span class="price-card__tag">Optional Extras</span>
+            <div class="price-card__amt">Custom <b>Extras</b></div>
+            <p>Can't choose just two flavors? Want the cart open all evening? The experience is tailored to your exact vision.</p>
+          </article>
+        </div>
+
+        <div class="included reveal-up">
+          <h3 class="included__title">Every booking includes</h3>
+          <ul class="included__list">
+            <li>White cart, fringe umbrella &amp; standing cooler</li>
+            <li>All serving equipment</li>
+            <li>Set up &amp; take down</li>
+            <li>60 miles round trip travel</li>
+            <li>2 hours of service time</li>
+            <li>Dedicated cake artist &amp; attendant</li>
+            <li>White tins with lids, napkins &amp; forks</li>
+            <li>3 drizzles: chocolate, white chocolate, caramel</li>
+            <li>Choice of 2 freshly baked cake flavors</li>
+            <li>9 unlimited classic toppings</li>
+            <li>Choice of 2 buttercream flavors</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Menu ===== -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="sec-head sec-head--center">
+          <span class="eyebrow">The Menu</span>
+          <h2 class="sec-title reveal-up">Curated to Your Celebration</h2>
+        </div>
+
+        <div class="menu__tabs" role="tablist">
+          <button class="menu__tab is-active" data-tab="cakes" role="tab">Cake Flavors</button>
+          <button class="menu__tab" data-tab="toppings" role="tab">Toppings</button>
+          <button class="menu__tab" data-tab="cream" role="tab">Buttercreams</button>
+        </div>
+
+        <div class="menu__panels">
+          <div class="menu__panel is-active" data-panel="cakes">
+            <ul class="flavor-list">
+              <li><span>White</span></li><li><span>Funfetti</span></li><li><span>Chocolate</span></li>
+              <li><span>Red Velvet</span></li><li><span>Lemon</span></li><li><span>Biscoff</span></li>
+              <li><span>Strawberry</span></li><li><span>Carrot Cake</span></li>
+              <li><span>White Chocolate Raspberry</span></li><li><span>Almond</span></li>
+              <li class="is-seasonal"><span>Pumpkin</span><em>seasonal</em></li>
+              <li class="is-seasonal"><span>Chai</span><em>seasonal</em></li>
+            </ul>
+          </div>
+          <div class="menu__panel" data-panel="toppings">
+            <div class="topping-cols">
+              <div>
+                <h4 class="topping-h">Classic · unlimited</h4>
+                <ul class="flavor-list flavor-list--tight">
+                  <li><span>Rainbow Sprinkles</span></li><li><span>Mini Chocolate Chips</span></li>
+                  <li><span>Oreo Crumbs</span></li><li><span>Mini M&amp;M's</span></li>
+                  <li><span>Mini Marshmallows</span></li><li><span>Biscoff Crumbs</span></li>
+                  <li><span>Fruity Pebbles</span></li><li><span>Shredded Coconut</span></li>
+                  <li><span>Mini White Chocolate Chips</span></li><li><span>Graham Cracker Crumbs</span></li>
+                  <li><span>Slivered Almonds</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="topping-h">Premium · upgrade</h4>
+                <ul class="flavor-list flavor-list--tight">
+                  <li><span>Fresh Berries</span></li>
+                  <li><span>Homemade Cookie Crumbles</span></li>
+                  <li><span>Edible Glitter</span></li><li><span>Maraschino Cherries</span></li>
+                  <li><span>Edible Flowers</span></li><li><span>Edible Butterfly Accent</span></li>
+                  <li><span>Chocolate Crisp Pearls</span></li>
+                  <li><span>Cake Soak: espresso, sweet milk, vanilla bean, champagne</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__panel" data-panel="cream">
+            <ul class="flavor-list flavor-list--cream">
+              <li><span>Vanilla</span></li><li><span>Chocolate</span></li><li><span>Cream Cheese</span></li>
+            </ul>
+            <p class="menu__note">Plus three signature drizzles: chocolate, white chocolate and caramel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Extras + Mini cake ===== -->
+    <section class="addons" id="addons">
+      <div class="container addons__grid">
+        <div class="addons__list-wrap">
+          <span class="eyebrow">Curated Additions</span>
+          <h2 class="sec-title reveal-up">Make It Yours</h2>
+          <ul class="addon-list">
+            <li class="reveal-up"><span>Premium topping menu access</span><b>$75</b></li>
+            <li class="reveal-up"><span>Custom tin colors</span><b>$30</b></li>
+            <li class="reveal-up"><span>Signature menu signage</span><b>$35</b></li>
+            <li class="reveal-up"><span>Third curated cake flavor</span><b>$50</b></li>
+            <li class="reveal-up"><span>Third buttercream flavor</span><b>$50</b></li>
+            <li class="reveal-up"><span>Unrestricted flavor access</span><b>$125</b></li>
+            <li class="reveal-up"><span>Extra cake tins <em>(min. 10)</em></span><b>$5 ea</b></li>
+          </ul>
+        </div>
+        <aside class="mini-cake reveal-up">
+          <span class="mini-cake__price">$125</span>
+          <h3>Centerpiece Mini Cutting Cake</h3>
+          <p>Still want those timeless photos of cutting the cake, or singing Happy Birthday with lit candles? Add a beautifully designed mini tiered cake, styled to match your event, for that classic, intentional moment while guests enjoy their individual tins.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Traditional & Custom Cakes ===== -->
+    <section class="trad" id="traditional">
+      <div class="container trad__grid">
+        <div class="trad__media reveal-up">
+          <img src="assets/img/custom-cake.jpg" alt="A heart shaped vintage buttercream cake in red and white, topped with cherries, pink ribbons and a cherub centerpiece, by Minns Cake Studio" loading="lazy" />
+        </div>
+        <div class="trad__text">
+          <span class="eyebrow">Beyond the Bar</span>
+          <h2 class="sec-title reveal-up">Traditional &amp; Custom Cakes</h2>
+          <p class="reveal-up">Not every celebration calls for the cart. Minn also designs traditional custom cakes, vintage piped and hand lettered, styled to your occasion and available for pickup from the Simi Valley studio.</p>
+          <p class="reveal-up">Birthdays, showers, anniversaries or just because. Share what you're dreaming up and we'll bring it to life.</p>
+          <a href="#cake-inquiry" class="btn btn--solid reveal-up">Inquire About a Cake</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Custom Cake Inquiry (modal) ===== -->
+    <div class="modal" id="cakeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cakeModalTitle">
+      <div class="modal__overlay" data-close></div>
+      <div class="modal__panel">
+        <button type="button" class="modal__back" data-close aria-label="Back to the site">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back
+        </button>
+        <div class="modal__head">
+          <span class="eyebrow">Custom Cake Inquiry</span>
+          <h2 class="sec-title" id="cakeModalTitle">Tell Us About Your Cake</h2>
+          <p class="modal__lead">Designing a traditional or custom cake for pickup? Share the details below and we'll follow up with a quote. (Booking the mobile cart instead? <a href="#quote" class="link-underline">Request a cart quote.</a>)</p>
+        </div>
+
+        <form class="quote__form" id="cakeForm" action="https://formsubmit.co/ajax/conmancjb2010@hotmail.com" method="POST">
+          <!-- TEMP: FormSubmit emails the address in the action above. First submit triggers a one-time activation email; click its link and submissions begin arriving. For production, switch the action to https://api.web3forms.com/submit and add a hidden access_key input. -->
+          <input type="hidden" name="_subject" value="New custom cake inquiry from Minns Cake Studio" />
+          <input type="hidden" name="_template" value="box" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input id="c-name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input id="c-email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="c-phone">Phone <em>(optional)</em></label>
+              <input id="c-phone" name="Phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="c-date">Date needed</label>
+              <input id="c-date" name="Date needed" type="date" required />
+            </div>
+            <div class="field">
+              <label for="c-servings">Servings</label>
+              <input id="c-servings" name="Servings" type="number" min="1" placeholder="e.g. 20" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-occasion">Occasion</label>
+            <div class="select-wrap">
+              <select id="c-occasion" name="Occasion" required>
+                <option value="">Select…</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Bridal / Baby Shower</option>
+                <option>Wedding</option>
+                <option>Other Celebration</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-flavor">Flavor preferences <em>(optional)</em></label>
+            <input id="c-flavor" name="Flavor preferences" type="text" placeholder="e.g. vanilla cake, cream cheese buttercream" />
+          </div>
+          <div class="field">
+            <label for="c-vision">Your cake vision</label>
+            <textarea id="c-vision" name="Cake vision" rows="4" placeholder="Style, colors, theme, inspiration, lettering…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--solid btn--lg" id="cakeSubmit">Send Inquiry</button>
+          <p class="quote__status" id="cakeStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="sec-head sec-head--center">
+          <span class="eyebrow">Good to Know</span>
+          <h2 class="sec-title reveal-up">Frequently Asked</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>How is the investment calculated?</summary>
+            <div class="faq__body"><p>A Live Artistry &amp; Service Fee tailored to your venue and logistics (averaging $300), plus $10 per guest for their individual cake tins. The base fee covers transport, setup and live styling. Custom upgrades are quoted on request.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Do guests take the tins home or eat them there?</summary>
+            <div class="faq__body"><p>Completely up to your guests! Tins are served ready to eat on the spot, but come with a matching lid, so guests can pop it on and take their custom creation home for later.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Is this a self serve station?</summary>
+            <div class="faq__body"><p>No, it's a fully hosted experience. I'm behind the cart as your cake artist, piping the buttercream, drizzling the sauces and placing toppings live for every single order.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Is there a minimum guest count?</summary>
+            <div class="faq__body"><p>To bring the full live artistry experience, we require a minimum investment equivalent to 50 guests. You're welcome to book for smaller, more intimate counts provided this baseline is met.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>How much space does the cart need?</summary>
+            <div class="faq__body"><p>The cart is 48"L × 25"W with side extenders, and the umbrella stands 7ft tall.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Are you licensed and insured?</summary>
+            <div class="faq__body"><p>Yes, a permitted home bakery with full event liability insurance. I'm always happy to provide business documentation or issue a custom COI for your venue.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>What happens if it rains or gets very hot?</summary>
+            <div class="faq__body"><p>For outdoor bookings I require a viable backup plan to protect the buttercream and handcrafted wooden cart. If rain is forecast or temperatures exceed 85°F, we'll move to a covered or climate controlled space. Fully outdoor venues need a professional pop up canopy for shade and shelter.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>What if my guest count changes after booking?</summary>
+            <div class="faq__body"><p>RSVPs fluctuate, so you can adjust your count up until 14 days before the event, when kitchen ordering is finalized. Counts can increase anytime; if final attendance drops, I'll still prepare the full contracted tins so you take the sweet extras home.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Request a Quote (modal) ===== -->
+    <div class="modal" id="quoteModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <div class="modal__overlay" data-close></div>
+      <div class="modal__panel">
+        <button type="button" class="modal__back" data-close aria-label="Back to the site">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg> Back
+        </button>
+        <div class="modal__head">
+          <span class="eyebrow">Start Here</span>
+          <h2 class="sec-title" id="quoteModalTitle">Request Your Quote</h2>
+          <p class="modal__lead">Tell us about your celebration and we'll send a personalized proposal. Every booking is tailored, so share as much or as little as you'd like to begin.</p>
+          <ul class="quote__facts">
+            <li><b>50 guest</b> minimum</li>
+            <li><b>$300+</b> artistry fee &amp; <b>$10</b> per guest</li>
+            <li>Serving <b>Ventura · Los Angeles · Santa Barbara</b></li>
+          </ul>
+          <p class="quote__alt">Prefer to talk it through first? <a href="https://minns.hbportal.co/schedule/69ddcb330fa94300429c0383" target="_blank" rel="noopener" class="link-underline">Schedule a consultation call →</a></p>
+        </div>
+
+        <form class="quote__form" id="quoteForm" action="https://formsubmit.co/ajax/conmancjb2010@hotmail.com" method="POST">
+          <!-- TEMP: FormSubmit emails the address in the action above. First submit triggers a one-time activation email; click its link and submissions begin arriving. For production, switch the action to https://api.web3forms.com/submit and add a hidden access_key input. -->
+          <input type="hidden" name="_subject" value="New quote request from Minns Cake Studio" />
+          <input type="hidden" name="_template" value="box" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="field">
+            <label for="q-name">Name</label>
+            <input id="q-name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="q-email">Email</label>
+              <input id="q-email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone <em>(optional)</em></label>
+              <input id="q-phone" name="Phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="q-date">Event date</label>
+              <input id="q-date" name="Event date" type="date" required />
+            </div>
+            <div class="field">
+              <label for="q-guests">Estimated guests <em>(50 minimum)</em></label>
+              <input id="q-guests" name="Estimated guests" type="number" min="50" step="1" placeholder="50+" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="q-type">Event type</label>
+            <div class="select-wrap">
+              <select id="q-type" name="Event type" required>
+                <option value="">Select…</option>
+                <option>Wedding</option>
+                <option>Birthday</option>
+                <option>Bridal / Baby Shower</option>
+                <option>Corporate Event</option>
+                <option>Other Celebration</option>
+              </select>
+            </div>
+          </div>
+          <div class="field field--other" id="q-otherField" hidden>
+            <label for="q-other">What are you celebrating?</label>
+            <input id="q-other" name="Other occasion" type="text" placeholder="Tell us the occasion" />
+          </div>
+          <fieldset class="field">
+            <legend>Curated extras <em>(optional)</em></legend>
+            <div class="checks">
+              <label><input type="checkbox" name="Add ons" value="Premium toppings ($75)" /><span>Premium toppings</span><em class="price">$75</em></label>
+              <label><input type="checkbox" name="Add ons" value="Custom tin colors ($30)" /><span>Custom tin colors</span><em class="price">$30</em></label>
+              <label><input type="checkbox" name="Add ons" value="Mini cutting cake ($125)" /><span>Mini cutting cake</span><em class="price">$125</em></label>
+              <label><input type="checkbox" name="Add ons" value="Menu signage ($35)" /><span>Menu signage</span><em class="price">$35</em></label>
+              <label><input type="checkbox" name="Add ons" value="Extra flavor ($50)" /><span>Extra flavor</span><em class="price">$50</em></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="q-msg">Tell us about your celebration</label>
+            <textarea id="q-msg" name="Message" rows="4" placeholder="Venue, vision, timing, flavor dreams…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--solid btn--lg" id="quoteSubmit">Send Request</button>
+          <p class="quote__status" id="quoteStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== Final CTA / Footer ===== -->
+    <footer class="footer" id="contact">
+      <div class="container footer__inner">
+        <span class="eyebrow eyebrow--light reveal-up">Let's celebrate</span>
+        <h2 class="footer__title">
+          <span class="ln"><span>Let's create</span></span>
+          <span class="ln"><span>something <em>sweet.</em></span></span>
+        </h2>
+        <div class="footer__cta reveal-up">
+          <a href="#quote" class="btn btn--solid btn--lg">Request Your Quote</a>
+        </div>
+        <div class="footer__meta">
+          <div>
+            <span class="footer__label">Based in</span>
+            <p>Simi Valley, California</p>
+          </div>
+          <div>
+            <span class="footer__label">Serving</span>
+            <p>Ventura · Los Angeles · Santa Barbara Counties</p>
+          </div>
+          <div>
+            <span class="footer__label">Find us</span>
+            <p><a href="https://www.instagram.com/thebuttercreambar_/" target="_blank" rel="noopener">@thebuttercreambar_</a></p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <img src="assets/img/logo.svg" alt="" aria-hidden="true" class="footer__logo" />
+          <small>© <span id="year"></span> Minns Cake Studio · The Buttercream Bar</small>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- GSAP + ScrollTrigger + Lenis (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
