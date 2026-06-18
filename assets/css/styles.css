@@ -334,6 +334,8 @@ body.is-loaded .preloader{ pointer-events:none; }
 .trad{ background:var(--ivory); padding:clamp(6rem,12vh,11rem) 0; }
 .trad__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,6rem); align-items:center; }
 .trad__media{ border-radius:8px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 40px 80px -36px rgba(43,37,33,.42); }
+/* Scroll-tilt reveal target: hint the compositor and keep edges crisp during 3D rotation */
+[data-tilt-reveal]{ will-change:transform, opacity; backface-visibility:hidden; }
 .trad__media img{ width:100%; height:100%; object-fit:cover; }
 .trad__text .eyebrow{ display:block; }
 .trad__text .sec-title{ margin-bottom:.2rem; }

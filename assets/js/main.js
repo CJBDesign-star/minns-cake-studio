@@ -193,6 +193,18 @@
       });
     });
 
+    /* Scroll-tilt reveal (ContainerScroll-style): the element starts tilted
+       back in 3D and rotates flat + scales up as it scrolls into view. */
+    gsap.utils.toArray("[data-tilt-reveal]").forEach((el) => {
+      gsap.fromTo(el,
+        { rotateX: 16, scale: 0.92, y: 44, opacity: 0, transformPerspective: 1200, transformOrigin: "50% 90%" },
+        {
+          rotateX: 0, scale: 1, y: 0, opacity: 1, ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 88%", end: "top 40%", scrub: 0.6 },
+        }
+      );
+    });
+
     /* Section titles: clip reveal */
     gsap.utils.toArray(".sec-title").forEach((t) => {
       if (t.closest(".modal")) return; // modal titles aren't scroll-revealed
