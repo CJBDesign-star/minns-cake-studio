@@ -563,7 +563,8 @@ body.is-loaded .preloader{ pointer-events:none; }
 
 /* ---------- Reveal base states ---------- */
 .reveal-up{ opacity:0; transform:translateY(30px); }
-.hero__title .ln>span{ transform:translateY(110%); }
+/* Hero title is visible by default; the rise-in is added by JS via gsap.from(),
+   so the headline can never get stuck hidden if scripts/cache misbehave. */
 
 /* ============================================================
    Responsive

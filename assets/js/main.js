@@ -72,7 +72,7 @@
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
       if (skip) { if (preloader) preloader.style.display = "none"; }
       else { tl.to("#preloader", { yPercent: -100, duration: 0.85, ease: "power3.inOut" }, 0); }
-      tl.to(".hero__title .ln>span", { yPercent: 0, duration: 1.05, stagger: 0.1 }, skip ? 0 : 0.3)
+      tl.from(".hero__title .ln>span", { yPercent: 110, duration: 1.05, stagger: 0.1 }, skip ? 0 : 0.3)
         .to(".hero .reveal-up", { y: 0, opacity: 1, duration: 0.85, stagger: 0.08 }, skip ? 0.05 : 0.5);
     } else {
       showHeroNow();
@@ -218,8 +218,8 @@
     const words = gsap.utils.toArray(".intro__lead .word");
     if (words.length) {
       gsap.to(words, {
-        opacity: 1, ease: "none", stagger: 1,
-        scrollTrigger: { trigger: ".intro", start: "top 70%", end: "bottom 60%", scrub: true },
+        opacity: 1, ease: "none", stagger: 0.4,
+        scrollTrigger: { trigger: ".intro", start: "top 78%", end: "center 70%", scrub: 0.4 },
       });
     }
 
