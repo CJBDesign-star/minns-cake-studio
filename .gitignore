@@ -1,6 +1,9 @@
 # Internal handoff notes — keep private, do not publish
 PROJECT-NOTES.md
 
+# Scratch: extra cake photos pulled from the old Tilda site (not all used in the gallery)
+_tilda_tmp/
+
 # OS
 Thumbs.db
 .DS_Store
