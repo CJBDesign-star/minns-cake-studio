@@ -433,7 +433,7 @@ body.is-loaded .preloader{ pointer-events:none; }
 .addon-list li b{ font-family:var(--serif); font-weight:500; font-size:1.3rem; color:var(--espresso); white-space:nowrap; }
 .mini-cake{
   background:linear-gradient(160deg,var(--sand),var(--champagne));
-  border-radius:10px; padding:clamp(2.4rem,4vw,3.2rem); position:sticky; top:120px;
+  border-radius:10px; padding:clamp(2.4rem,4vw,3.2rem);
 }
 .mini-cake__price{ font-family:var(--serif); font-size:3rem; font-weight:600; color:var(--gold-deep); display:block; }
 .mini-cake h3{ font-family:var(--serif); font-weight:500; font-size:1.6rem; margin:.4rem 0 1rem; }
